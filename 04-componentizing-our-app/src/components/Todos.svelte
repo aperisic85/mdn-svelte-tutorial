@@ -27,7 +27,7 @@
     todos;
 
   function updateTodo(todo){
-    const i = todos.findIndex(t => t = todo.id);
+    const i = todos.findIndex(t => t.id === todo.id);
     todos[i] = {...todos[i],...todo};
   }
 
