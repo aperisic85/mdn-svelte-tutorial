@@ -1,6 +1,5 @@
-<!-- components/Todo.svelte -->
 <script>
-  import { createEventDispatcher } from 'svelte'
+  import { createEventDispatcher } from 'svelte';
   const dispatch = createEventDispatcher()
 
   export let todo
@@ -9,8 +8,8 @@
   let name = todo.name                    // hold the name of the todo being edited
 
   function update(updatedTodo) {
-    todo = { ...todo, ...updatedTodo }    // applies modifications to todo
-    dispatch('update', todo)              // emit update event
+    todo = { ...todo, ...updatedTodo }    // aplies modifications to todo
+    dispatch('update', todo)              //emit update event
   }
 
   function onCancel() {

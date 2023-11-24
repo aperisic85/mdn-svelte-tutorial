@@ -7,7 +7,7 @@
 
     function update(updatedTodo){
         todo = {...todo, ...updatedTodo}; // aplies modification to todo
-        dispatch("update", todo); //emit update event
+        dispatch('update', todo); //emit update event
     }
 
     function onCancel(){
@@ -16,7 +16,7 @@
     }
 
     function onSave(){
-        update({name}); //update name
+        update({name: name}); //update name
         editing = false; // exit editing mode
     }
 
@@ -40,11 +40,11 @@
         <form on:submit|preventDefault = { onSave } class="stack-small" on:keydown={(e) => e.key === 'Escape' && onCancel()}> 
             <div class="form-group">
                 <label for="todo-{todo.id}" class="todo-label">New name for '{todo.name}'</label>
-                <input bind:value={name} type="text" id="todo-{todo.id}" autocomplete="off" class="todo-text">        
+                <input bind:value={name} type="text" id="todo-{todo.id}" autoComplete="off" class="todo-text"/>        
             </div>
             <div class="btn-group">
                 <button class="btn todo-cancel" on:click={onCancel} type = "button">Cancel<span class = "visually-hidden ">renaming{todo.name}</span></button>
-                <button class="btn btn-primary todo-edit" on:click={onCancel} type = "submit" disabled={!name}>Save<span class = "visually-hidden ">new name for {todo.name}</span></button>
+                <button class="btn btn_primary todo-edit" on:click={onCancel} type = "submit" disabled={!name}>Save<span class = "visually-hidden ">new name for {todo.name}</span></button>
             </div>
         </form>
     {:else}    
@@ -58,7 +58,7 @@
         </label>
     </div>
     <div class="btn-group">
-        <button type="button" class="btn">
+        <button type="button" class="btn" on:click={onEdit}>
         Edit <span class="visually-hidden">{todo.name}</span>
         </button>
         <button type="button" class="btn btn__danger"
