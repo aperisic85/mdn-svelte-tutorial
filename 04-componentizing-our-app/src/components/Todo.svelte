@@ -44,7 +44,7 @@
             </div>
             <div class="btn-group">
                 <button class="btn todo-cancel" on:click={onCancel} type = "button">Cancel<span class = "visually-hidden ">renaming{todo.name}</span></button>
-                <button class="btn btn_primary todo-edit" on:click={onCancel} type = "submit" disabled={!name}>Save<span class = "visually-hidden ">new name for {todo.name}</span></button>
+                <button class="btn btn_primary todo-edit" type = "submit" disabled={!name}>Save<span class = "visually-hidden ">new name for {todo.name}</span></button>
             </div>
         </form>
     {:else}    
